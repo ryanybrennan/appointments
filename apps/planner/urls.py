@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^appointments/(?P<id>\d+)$', views.edit_appt, name='edit_appt'),
     url(r'^logoff$', views.logoff, name = 'logoff'),
     url(r'^update/(?P<id>\d+)$', views.update, name='update'),
+    url(r'^delete/(?P<id>\d+)$', views.delete, name = 'delete'),
 ]

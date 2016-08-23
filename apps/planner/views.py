@@ -53,5 +53,9 @@ def update(request, id):
         for error in errors:
             messages.add_message(request, messages.ERROR, error)
         return redirect('homepage')
+def delete(request, id):
+    appt = Appt.objects.get(id=id)
+    appt.delete()
+    return redirect('homepage')
 def logoff(request):
     return redirect('login_reg')

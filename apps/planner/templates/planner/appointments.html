@@ -19,7 +19,7 @@
       <td>{{appt.task}}</td>
       <td>{{appt.time}}</td>
       <td>{{appt.status}}</td>
-      <td><a href="{% url 'edit_appt' id=appt.id %}">Edit</a> | <a href="#">Delete</a></td>
+      <td><a href="{% url 'edit_appt' id=appt.id %}">Edit</a> | <a href="{% url 'delete' id=appt.id %}">Delete</a></td>
     </tr>
   {% endfor %}
 </table>
