@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add an Appoitment</title>
+  </head>
+  <body>
+    <div id='nav'>
+      <p><a href="{% url 'homepage' %}">Dashboard</a> | <a href="{%url 'login_reg' %}">Logout</a></p>
+    </div>
+<form class="edit" action="{% url 'update' id=appts.id %}" method="post">
+  {% csrf_token %}
+<p>Tasks: <input type="text" name="tasks" value="{{appts.task}}"></p>
+<p>Status: <input list="status" name="status" value="">
+<datalist id="status">
+  <option value="Done">Done</option>
+  <option value="Pending">Pending</option>
+  <option value="Missed">Missed</option>
+</datalist>
+</p>
+<p>Date: <input type="date" name="date" value= "{{appts.date}}"></p>
+<p>Time: <input type="time" name="time" value = "{{appts.time}}"></p>
+<input type="submit" name="update" value="Update">
+</form>
+  </body>
+</html>
